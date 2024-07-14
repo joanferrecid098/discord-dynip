@@ -6,8 +6,9 @@
   "author": "joanferrecid098",
   "license": "MIT",
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "public-ip": "^6.0.2"
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security"
   },
   "scripts": {
     "start": "node src/main",

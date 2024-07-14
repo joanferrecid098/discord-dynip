@@ -1,3 +1,4 @@
+const triggerServices = require('./services.js');
 const http = require('http');
 const fs = require('fs');
 
@@ -47,6 +48,8 @@ const compareIP = ({ current, stored }) => {
         writeFile(JSON.stringify({
             ip: current
         }));
+
+        triggerServices(current);
 
         return true;
     }
