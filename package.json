@@ -1,0 +1,16 @@
+{
+  "name": "discord-dynip",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "repository": "git@github.com:joanferrecid098/discord-dynip.git",
+  "author": "joanferrecid098",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "public-ip": "^6.0.2"
+  },
+  "scripts": {
+    "start": "node src/main",
+    "dev": "npx nodemon src/main.js"
+  }
+}
