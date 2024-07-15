@@ -7,7 +7,11 @@ const checkFile = async (json) => {
     try {
         const data = fs.readFileSync('src/ip-adr.json', 'utf8');
 
-        return JSON.parse(data).ip;
+        try {
+            return JSON.parse(data).ip;
+        } catch (err) {
+            return console.error('JSON file is corrupted.');
+        }
     } catch (err) {
         if (err.code === 'ENOENT') {
             console.error('File not found. Creating new ip-adr.json...');
@@ -18,10 +22,10 @@ const checkFile = async (json) => {
 
                 return JSON.parse(json).ip;
             } catch (writeErr) {
-                console.error('Error writing file:', writeErr);
+                return console.error('Error writing file:', writeErr);
             }
         } else {
-            console.error('Error reading file:', err);
+            return console.error('Error reading file:', err);
         }
     }
 };
