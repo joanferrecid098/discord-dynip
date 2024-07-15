@@ -31,7 +31,7 @@ jobs:
     - run: npm start
     - name: Change the stored IP
       run: cp src/ip-adr.json saved-ip-adr.json
-    - run: echo '1.1.1.1' > src/ip-adr.json
+    - run: echo '{"ip":"1.1.1.1"}' > src/ip-adr.json
     - run: npm start
     - name: Check that the IP has changed
       uses: LouisBrunner/diff-action@v2.0.0
