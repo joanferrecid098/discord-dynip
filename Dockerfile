@@ -8,7 +8,7 @@ RUN npm install
 COPY . .
 
 RUN touch crontab.tmp \
-    && echo '* * * * * cd /opt/dyn-ip/ && node /app/dyn-ip/src/main.js' > crontab.tmp \
+    && echo '0 * * * * cd /app/dyn-ip/ && node src/main.js' > crontab.tmp \
     && crontab crontab.tmp \
     && rm -rf crontab.tmp
 
