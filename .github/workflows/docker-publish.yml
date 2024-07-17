@@ -18,8 +18,9 @@ jobs:
       - name: build
         run: |
           docker build . -t joanferrecid098/discord-dynip:latest
+          docker build . -t joanferrecid098/discord-dynip:${{ github.event.release.tag_name }}
       - name: publish
         run: |
           docker login -u joanferrecid098 -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push joanferrecid098/discord-dynip:latest
-          docker push joanferrecid098/discord-dynip:v1.1.0
+          docker push joanferrecid098/discord-dynip:${{ github.event.release.tag_name }}
