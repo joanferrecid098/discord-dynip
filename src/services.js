@@ -18,11 +18,15 @@ const checkStatus = (status, service) => {
 module.exports = (currentIP) => {
     // Get service connection files
     const discordConnection = require('./discord/connection.js');
+    const slackConnection = require('./slack/connection.js');
 
     // Get environment variables
     const discordWebhook = process.env.DISCORD_WEBHOOK;
+    const slackWebhook = process.env.SLACK_WEBHOOK;
 
     // Check and send alert to each one
     if (discordWebhook) discordConnection({ discordWebhook, currentIP, checkStatus });
     if (!discordWebhook) checkStatus(4, 'DISCORD');
+    if (slackWebhook) slackConnection({ slackWebhook, currentIP, checkStatus });
+    if (!slackWebhook) checkStatus(4, 'SLACK');
 }

@@ -4,7 +4,7 @@ module.exports = ({ discordWebhook, currentIP, checkStatus }) => {
     const params = {
         username: "DynamicIP Manager",
         //avatar_url: "",
-        content: `@everyone new ip is ${currentIP}`
+        content: `@everyone New public IP address is: ${currentIP}`
     }
     
     axios.post(discordWebhook, params)
