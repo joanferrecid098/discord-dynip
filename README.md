@@ -1,4 +1,9 @@
 # Discord DynIP
+
+![GitHub license](https://img.shields.io/github/license/joanferrecid098/discord-dynip)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/joanferrecid098/discord-dynip)
+![Docker Image Version (tag)](https://img.shields.io/docker/v/joanferrecid098/discord-dynip/latest)
+
 A quick and simple tool to mention you whenever your public IP address changes.
 
 ## Requirements
@@ -27,7 +32,7 @@ services:
     restart: unless-stopped
 ```
 
-Note: If you plan to mount the ip-adr.json file, first create the file and fill it with this placeholder:
+**Note:** If you plan to mount the ip-adr.json file, first create the file and fill it with this placeholder:
 ```json
 {"ip":"0.0.0.0"}
 ```
