@@ -26,7 +26,7 @@ services:
     container_name: discord-dynip
     environment:
       - DISCORD_WEBHOOK=[insert_discord_webhook_URL] # optional
-      - SLACK=[insert_slack_webhook_URL] # optional
+      - SLACK_WEBHOOK=[insert_slack_webhook_URL] # optional
       volumes:
       - ~/discord-dynip/ip-adr.json:/app/dyn-ip/src/ip-adr.json # optional (read below)
     restart: unless-stopped
